@@ -5,7 +5,7 @@ import GoalEditForm from './GoalEditForm';
 export default function GoalsCard({goal, handleEditGoal}) {
     const [isEdit, setIsEdit] = useState(false);
 
-    
+
     function handleEditClick() {
         setIsEdit(!isEdit);
       }
@@ -14,9 +14,9 @@ export default function GoalsCard({goal, handleEditGoal}) {
 
     const renderGoal = (
         <div key={goal.id}>
-          {/* <button onClick={(e) => onDeleteClick(e, goal)}>X</button> &nbsp; */}
+          <button onClick={(e) => onDeleteClick(e, goal)}>X</button> &nbsp;
           <button onClick={(e) => handleEditClick(e, goal)}>Edit</button> &nbsp;
-          <span style={{ fontWeight: "bold" }}>{goal.goal}</span>: 
+          <span style={{ fontWeight: "bold" }}>{goal.goal}</span> 
         </div>
       );
 
@@ -26,7 +26,7 @@ export default function GoalsCard({goal, handleEditGoal}) {
         <div key={goal.id}>
           {/* <button onClick={(e) => onDeleteClick(e, goal)}>X</button> &nbsp; */}
           <button onClick={(e) => handleEditClick(e, goal)}>Edit</button> &nbsp;
-          <span style={{ fontWeight: "bold" }}>{goal.goal}</span>:{" "}
+          <span style={{ fontWeight: "bold" }}>{goal.goal}</span>{" "}
           <GoalEditForm
             goal={goal}
             onEditClick={handleEditClick}
