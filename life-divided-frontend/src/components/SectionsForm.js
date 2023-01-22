@@ -44,10 +44,11 @@ export default function SectionsForm({handleAddSection}) {
 
 
   return (
-    <div>
+    <div id='sectionForm'>
       <form onSubmit={handleSubmit}>
           <label>
             <span style={{ fontWeight: "bold" }}>Add New section:</span>
+            <br/>
             <input
               type="text"
               name="title"
@@ -56,6 +57,7 @@ export default function SectionsForm({handleAddSection}) {
               onChange={handleInputChange}
             />
           </label>
+          <br/>
           <input type="submit" value="Submit" />
         </form>
     </div>

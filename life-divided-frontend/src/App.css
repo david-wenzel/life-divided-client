@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;1,400&display=swap'); 
+
+.App {
+  text-align: center;
+  font-family: 'Cormorant', serif;
+}
+
+#sectionForm{
+  padding-bottom: 3em;
+}
