@@ -9,6 +9,17 @@ export default function GoalForm({id}) {
 
   const[values, setValues] = useState(initialValues)
 
+  const handleChange = (e) => {
+    //const name = e.target.name
+    //const value = e.target.value
+    const { name, value } = e.target;
+
+    setValues({
+      ...values,
+      [name]: value,
+    });
+  };
+
   
 
   
