@@ -32,6 +32,16 @@ export default function Goals({ sections, handleEditGoal, handleAddGoal }) {
     />
   ));
 
+  function handleDeleteClick(e, event) {
+    fetch(`http://localhost:9292/goals/${goals.id}`, {
+      method: "DELETE",
+    })
+      .then((r) => r.json())
+      // .then((data) => console.log(data));
+      .then((deletedGoal) => onDeleteGoal(deletedGoal));
+  }
+
+
 
 
 
