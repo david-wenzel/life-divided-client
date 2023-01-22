@@ -49,9 +49,10 @@ export default function GoalForm({id, handleAddGoal}) {
   
     return (
     <div>
-       <form onSubmit={handleSubmit}>
+       <form id='goalForm' onSubmit={handleSubmit}>
           <label>
             <span style={{ fontWeight: "bold" }}>Add New Goal:</span>
+            <br/>
             <input
               type="text"
               name="goal"
@@ -59,6 +60,7 @@ export default function GoalForm({id, handleAddGoal}) {
               value={values.goal}
               onChange={handleChange}
             />
+            <br/>
             </label>
             <input type="submit" value="Submit" />
         </form>

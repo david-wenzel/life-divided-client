@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 // import { useParams } from "react-router-dom";
 import Home from "./components/Home";
 import Sections from "./components/Sections";
-import Goals from "./components/Goals";
+import Goals from "./components/GoalsDetail";
 import NavBar from "./components/NavBar";
 import "./App.css"
 
