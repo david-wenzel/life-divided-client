@@ -48,7 +48,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/sections">
-           <Sections sections={ sections } />
+           <Sections sections={ sections } handleAddSection={handleAddSection}/>
           </Route>
           <Route exact path="/sections/:id" >
            <Goals sections={ sections }

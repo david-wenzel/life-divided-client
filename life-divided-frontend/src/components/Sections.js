@@ -2,7 +2,7 @@ import React from "react";
 // import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
-export default function Sections({sections}) {
+export default function Sections({sections, handleAddSection}) {
 
     const renderSections = sections.map((section) => (
         <li key={section.id}>
