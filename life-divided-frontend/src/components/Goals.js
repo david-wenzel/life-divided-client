@@ -11,6 +11,10 @@ export default function Goals({sections}) {
   // browswer bar returns a number that is a string so we to to parseInt to get it back to a integer to compare to our sections object
   const foundSection = sections.find(({ id }) => id === parseInt(params.id));
 
+  // each goal
+  let goals =foundSection.goals.map((goal) => goal.goal )
+
+  console.log(goals)
 
 
 
