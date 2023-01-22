@@ -34,6 +34,22 @@ function App() {
     setSections(updateSections);
   }
 
+  function handleAddGoal(newGoal) {
+
+    // map over sections. if the section id matches the new goals's foreign key for section id, it will copy the goal and nested events, and add in the new goal. Otherwise, it will return the existing section.
+    const updateSections = sections.map((section) => {
+      if (section.id === newGoal.section_id) {
+        return {
+          ...section,
+          goals: [...section.goals, newGoal],
+        };
+      }
+      return section;
+    });
+    // console.log(updateCities);
+    setSections(updateSections);
+  }
+
 
   //add section 
   function handleAddSection(newSection) {
@@ -53,6 +69,7 @@ function App() {
           <Route exact path="/sections/:id" >
            <Goals sections={ sections }
            handleEditGoal={handleEditGoal}
+           handleAddGoal={handleAddGoal}
            />
           </Route>
         </Switch>

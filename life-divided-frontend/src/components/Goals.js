@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import GoalsCard from "./GoalsCard";
 import GoalForm from "./GoalForm";
 
-export default function Goals({ sections, handleEditGoal }) {
+export default function Goals({ sections, handleEditGoal, handleAddGoal }) {
   // useParams
   const { id } = useParams();
   const params = useParams();
@@ -37,7 +37,7 @@ export default function Goals({ sections, handleEditGoal }) {
 
   return( 
   <div>
-    <GoalForm id={parsedId}/>
+    <GoalForm id={parsedId} handleAddGoal={handleAddGoal}/>
     {renderGoals}
   </div>
   )

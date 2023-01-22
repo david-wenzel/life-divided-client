@@ -1,10 +1,11 @@
 import React from 'react'
 import { useState } from 'react'
 
-export default function GoalForm({id}) {
+export default function GoalForm({id, handleAddGoal}) {
   
   const initialValues ={
-    goal: ''
+    goal: '',
+    section_id: id
   }
 
   const[values, setValues] = useState(initialValues)
@@ -33,7 +34,7 @@ export default function GoalForm({id}) {
     })
       .then((r) => r.json())
       // .then((data) => console.log(data))
-      .then((newGoal) => onAddGoal(newGoal));
+      .then((newGoal) => handleAddGoal(newGoal));
 
     // clear input fields on submit by updating values state:
     setValues(initialValues);
