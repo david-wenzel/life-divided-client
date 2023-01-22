@@ -55,7 +55,6 @@ function App() {
   function handleAddSection(newSection) {
     setSections([...sections, {...newSection, goals:[]}]);
   }
-  console.log(sections)
 
   function handleDeleteGoal(deletedGoal) {
     // console.log("handle delete Event", deletedEvent);
