@@ -19,8 +19,8 @@ export default function Sections() {
 
     //
     const renderSections = sections.map((section) => (
-        <ul key={city.id}>
-            <NavLink to={`/cities/${section.id}`}>{city.name}</NavLink>
+        <ul key={section.id}>
+            <NavLink to={`/sections/${section.id}`}>{section.name}</NavLink>
         </ul>
       ));
 
