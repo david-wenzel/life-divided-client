@@ -24,7 +24,9 @@ function App() {
           <Route exact path="/sections">
            <Sections sections={ sections } />
           </Route>
-          <Route exact path="/sections/:id" component={Goals} />
+          <Route exact path="/sections/:id" >
+           <Goals sections={ sections } />
+          </Route>
         </Switch>
       </Router>
     </div>

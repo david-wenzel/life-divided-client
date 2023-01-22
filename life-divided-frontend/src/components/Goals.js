@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 
-export default function Goal() {
+export default function Goals({sections}) {
 
 
 
