@@ -1,5 +1,4 @@
 import React from "react";
-// import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
@@ -18,15 +17,17 @@ export default function Sections() {
   }, []);
 
     //
+    console.log(sections)
     const renderSections = sections.map((section) => (
         <ul key={section.id}>
-            <NavLink to={`/sections/${section.id}`}>{section.name}</NavLink>
+            <NavLink to={`/sections/${section.id}`}>{section.title}</NavLink>
         </ul>
       ));
 
   return (
     <div>
       <h1>Sections</h1>
+      { renderSections }
     </div>
   );
 }
