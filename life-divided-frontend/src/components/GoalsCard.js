@@ -4,7 +4,9 @@ import GoalEditForm from './GoalEditForm';
 
 export default function GoalsCard({goal, handleEditGoal}) {
     const [isEdit, setIsEdit] = useState(false);
-    function handleEditClick(e, goal) {
+
+    
+    function handleEditClick() {
         setIsEdit(!isEdit);
       }
 

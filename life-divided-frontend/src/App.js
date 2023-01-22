@@ -16,8 +16,7 @@ function App() {
   }, []);
 
   function handleEditGoal(editGoal) {
-    // console.log("In EventsList:", editEvent);
-    // map over all cities. if the city id matches edited event's foreign key for city id, it'll replace existing event as long as the event id matches the id of the event being edited.
+    // map over all section. if the section id matches edited goals's foreign key for section id, it'll replace existing goal as long as the goal id matches the id of the goal being edited.
     const updateSections = sections.map((section) => {
       if (section.id === editGoal.section_id) {
         return {
