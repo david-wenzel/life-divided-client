@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-export default function Home() {
+export default function Home(sections) {
   return (
     <div>
       <h1>LIFE/divided</h1>

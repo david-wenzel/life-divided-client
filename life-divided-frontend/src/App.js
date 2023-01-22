@@ -8,23 +8,23 @@ import Sections from "./components/Sections";
 
 
 function App() {
-const [sections, setSections] = useState();
+// const [sections, setSections] = useState([]);
 
-useEffect(() => {
-  fetch("http://localhost:9292/sections")
-    .then((res) => res.json())
-    .then((data) => setSections(data));
-    console.log(sections)
-}, []);
+// useEffect(() => {
+//   fetch("http://localhost:9292/sections")
+//     .then((res) => res.json())
+//     .then((data) => setSections(data));
+//     // console.log(sections)
+// }, []);
 
-
+// console.log(sections)
   return (
     <div className="App">
       <Router>
       {/* <Navbar /> */}
       <Switch>
-      <Route exact path="/" component={ Home } />
-      <Route exact path="/users" component={ Sections }/>
+      <Route exact path="/" component={ Home }  />
+      <Route exact path="/sections" component={ Sections } />
       </Switch>
       </Router>
     </div>
