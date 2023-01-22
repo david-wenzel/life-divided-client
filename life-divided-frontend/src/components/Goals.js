@@ -7,10 +7,11 @@ export default function Goals({ sections, handleEditGoal }) {
   // useParams
   const { id } = useParams();
   const params = useParams();
+  // browswer bar returns a number that is a string so we to to parseInt to get it back to a integer to compare to our sections object
+  const parsedId = parseInt(params.id)
 
   // find section with same id as id from the browser bar
-  // browswer bar returns a number that is a string so we to to parseInt to get it back to a integer to compare to our sections object
-  const foundSection = sections.find(({ id }) => id === parseInt(params.id));
+  const foundSection = sections.find(({ id }) => id === parsedId);
 
   // each goal object which contains id, goal, section_id
   // let goals = foundSection.goals.map((goal) => goal);
@@ -36,7 +37,7 @@ export default function Goals({ sections, handleEditGoal }) {
 
   return( 
   <div>
-    <GoalForm id={id}/>
+    <GoalForm id={parsedId}/>
     {renderGoals}
   </div>
   )
