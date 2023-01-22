@@ -11,6 +11,8 @@ export default function Sections({sections, handleAddSection}) {
         </li>
       ));
 
+      
+
   return (
     <div>
       <h1>Sections</h1>
