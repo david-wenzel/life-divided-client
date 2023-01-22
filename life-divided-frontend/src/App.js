@@ -15,6 +15,27 @@ function App() {
       .then((data) => setSections(data));
   }, []);
 
+  function handleEditGoal(editGoal) {
+    // console.log("In EventsList:", editEvent);
+    // map over all cities. if the city id matches edited event's foreign key for city id, it'll replace existing event as long as the event id matches the id of the event being edited.
+    const updateSections = sections.map((section) => {
+      if (section.id === editGoal.section_id) {
+        return {
+          ...section,
+          goals: section.goals.map((goal) => {
+            if (goal.id === editGoal.id) {
+              return editGoal;
+            }
+            return goal;
+          }),
+        };
+      }
+      return section;
+    });
+    setSections(updateSections);
+    // console.log(updateCities);
+  }
+
   return (
     <div className="App">
       <Router>
@@ -25,7 +46,9 @@ function App() {
            <Sections sections={ sections } />
           </Route>
           <Route exact path="/sections/:id" >
-           <Goals sections={ sections } />
+           <Goals sections={ sections }
+           handleEditGoal={handleEditGoal}
+           />
           </Route>
         </Switch>
       </Router>

@@ -2,9 +2,8 @@ import React from 'react'
 import { useState } from 'react';
 import GoalEditForm from './GoalEditForm';
 
-export default function GoalsCard({goal}) {
+export default function GoalsCard({goal, handleEditGoal}) {
     const [isEdit, setIsEdit] = useState(false);
-console.log(goal)
     function handleEditClick(e, goal) {
         setIsEdit(!isEdit);
       }
@@ -29,7 +28,7 @@ console.log(goal)
           <GoalEditForm
             goal={goal}
             onEditClick={handleEditClick}
-            // onEditGoal={onEditGoal}
+            handleEditGoal={handleEditGoal}
           />
         </div>
       );

@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import GoalsCard from "./GoalsCard";
 
-export default function Goals({ sections }) {
+export default function Goals({ sections, handleEditGoal }) {
   // useParams
   const { id } = useParams();
   const params = useParams();
@@ -26,7 +26,7 @@ export default function Goals({ sections }) {
       key={goal.id}
       goal={goal}
       // onDeleteClick={handleDeleteClick}
-      // onEditGoal={onEditGoal}
+      handleEditGoal={handleEditGoal}
     />
   ));
 

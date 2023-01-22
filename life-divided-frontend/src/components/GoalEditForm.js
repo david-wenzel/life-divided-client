@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 
-export default function GoalEditForm({goal, onEditClick, onEditGoal}) {
+export default function GoalEditForm({goal, onEditClick, handleEditGoal}) {
 
     
     console.log(goal)
@@ -35,7 +35,7 @@ function handleSubmit(e, goal) {
       })
         .then((r) => r.json())
         // .then((data) => console.log(data))
-        .then((editGoal) => onEditGoal(editGoal));
+        .then((editGoal) => handleEditGoal(editGoal));
   
       // set isEdit state to !isEdit so the form is no longer displayed
       onEditClick();
