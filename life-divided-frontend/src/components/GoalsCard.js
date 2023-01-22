@@ -40,7 +40,10 @@ export default function GoalsCard({goal}) {
 
   return (
     <div>
-      {renderGoal}
+        { isEdit?
+      {renderGoal}:
+      {renderEditGoal}
+        }
     </div>
   )
 }

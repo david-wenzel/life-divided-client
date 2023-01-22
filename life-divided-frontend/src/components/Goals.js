@@ -16,7 +16,8 @@ export default function Goals({ sections }) {
 
   console.log(goals);
 
-  let renderGoals = goals.map((goal) => (
+// breaks on refresh because we lose state - may need to add if statment to do a network call to fetch data 
+ let renderGoals = goals.map((goal) => (
     <GoalsCard
       key={goal.id}
       goal={goal}
@@ -24,6 +25,9 @@ export default function Goals({ sections }) {
       // onEditGoal={onEditGoal}
     />
   ));
+
+
+
 
   return( 
   <div>
