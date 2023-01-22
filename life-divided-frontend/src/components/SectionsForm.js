@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export default function SectionsForm(handleAddSection) {
+export default function SectionsForm({handleAddSection}) {
 
     const initialValues = {
         title: "",
