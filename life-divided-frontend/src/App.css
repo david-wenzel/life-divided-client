@@ -3,9 +3,24 @@
 .App {
   text-align: center;
   font-family: 'Cormorant', serif;
+  list-style-type: none;
+
 }
 
 #sectionForm{
   padding-bottom: 3em;
 }
 
+#nav {
+  display: flex;
+  justify-content: space-between;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  font-size: larger;
+
+}
