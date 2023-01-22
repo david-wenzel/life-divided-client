@@ -57,6 +57,25 @@ function App() {
   }
   console.log(sections)
 
+  function handleDeleteGoal(deletedGoal) {
+    // console.log("handle delete Event", deletedEvent);
+    // newCitites filters cities array down to all cities whose id doesn't match the deleted id.
+    const newSections = sections.map((section) => {
+      // map over cities. if the city id matches the deleted event's foreign key for city id, it will copy the city and filter down the city's events those whose id don't match the deleted event's id.
+      if (section.id === deletedGoal.section_id) {
+        return {
+          ...section,
+          goals: section.goals.filter((goal) => goal.id !== deletedGoal.id),
+        };
+      }
+      return section;
+    });
+    // console.log(newCities);
+    setSections(newSections);
+  }
+
+
+
   return (
     <div className="App">
       <Router>
@@ -68,6 +87,7 @@ function App() {
           </Route>
           <Route exact path="/sections/:id" >
            <Goals sections={ sections }
+           handleDeleteGoal={handleDeleteGoal}
            handleEditGoal={handleEditGoal}
            handleAddGoal={handleAddGoal}
            />

@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import GoalsCard from "./GoalsCard";
 import GoalForm from "./GoalForm";
 
-export default function Goals({ sections, handleEditGoal, handleAddGoal }) {
+export default function Goals({ sections, handleEditGoal, handleAddGoal, handleDeleteGoal }) {
   // useParams
   // const { id } = useParams();
   const params = useParams();
@@ -22,24 +22,32 @@ export default function Goals({ sections, handleEditGoal, handleAddGoal }) {
 
   // console.log(goals);
 
+
+
+
+  function handleDeleteClick(e, goal) {
+    fetch(`http://localhost:9292/goals/${goal.id}`, {
+      method: "DELETE",
+    })
+      .then((r) => r.json())
+      // .then((data) => console.log(data));
+      .then((deletedGoal) => handleDeleteGoal(deletedGoal));
+  }
+
+
+
+
 // breaks on refresh because we lose state - may need to add if statment to do a network call to fetch data 
  let renderGoals = goals.map((goal) => (
     <GoalsCard
       key={goal.id}
       goal={goal}
-      // onDeleteClick={handleDeleteClick}
+      handleDeleteClick={handleDeleteClick}
       handleEditGoal={handleEditGoal}
     />
   ));
 
-  function handleDeleteClick(e, goal) {
-    fetch(`http://localhost:9292/goals/${goals.id}`, {
-      method: "DELETE",
-    })
-      .then((r) => r.json())
-      // .then((data) => console.log(data));
-      .then((deletedGoal) => onDeleteGoal(deletedGoal));
-  }
+  
 
 
 
@@ -47,7 +55,7 @@ export default function Goals({ sections, handleEditGoal, handleAddGoal }) {
 
   return( 
   <div>
-    <GoalForm id={parsedId} handleAddGoal={handleAddGoal}/>
+    <GoalForm id={parsedId} handleAddGoal={handleAddGoal} />
     {renderGoals}
   </div>
   )
