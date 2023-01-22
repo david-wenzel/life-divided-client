@@ -33,7 +33,7 @@ export default function GoalForm({id}) {
     })
       .then((r) => r.json())
       // .then((data) => console.log(data))
-      .then((newGoal) => onAddEvent(newGoal));
+      .then((newGoal) => onAddGoal(newGoal));
 
     // clear input fields on submit by updating values state:
     setValues(initialValues);
@@ -48,7 +48,19 @@ export default function GoalForm({id}) {
   
     return (
     <div>
-      
+       <form onSubmit={handleSubmit}>
+          <label>
+            <span style={{ fontWeight: "bold" }}>Add New Event:</span>
+            <input
+              type="text"
+              name="goal"
+              placeholder="goal"
+              value={values.goal}
+              onChange={handleChange}
+            />
+            </label>
+            <input type="submit" value="Submit" />
+        </form>
     </div>
   )
 }
