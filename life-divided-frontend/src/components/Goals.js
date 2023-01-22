@@ -1,8 +1,8 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
+import React from "react";
+import { useParams } from "react-router-dom";
+import GoalsCard from "./GoalsCard";
 
-export default function Goals({sections}) {
-  
+export default function Goals({ sections }) {
   // useParams
   const { id } = useParams();
   const params = useParams();
@@ -11,23 +11,19 @@ export default function Goals({sections}) {
   // browswer bar returns a number that is a string so we to to parseInt to get it back to a integer to compare to our sections object
   const foundSection = sections.find(({ id }) => id === parseInt(params.id));
 
-  // each goal
-  let goals =foundSection.goals.map((goal) => goal.goal )
+  // each goal object which contains id, goal, section_id
+  let goals = foundSection.goals.map((goal) => goal);
 
-  console.log(goals)
+  console.log(goals);
 
+  let renderGoals = goals.map((goal) => (
+    <GoalsCard
+      key={goal.id}
+      goal={goal}
+      // onDeleteClick={handleDeleteClick}
+      // onEditGoal={onEditGoal}
+    />
+  ));
 
-
-
-
-
-
-
-
-    
-  return (
-    <div>
-      
-    </div>
-  )
+  return <div>{renderGoals}</div>;
 }
