@@ -16,12 +16,11 @@ export default function Sections() {
       .then((data) => setSections(data));
   }, []);
 
-    //
-    console.log(sections)
+    //map through each section and using dot notation create a navlink of each title to a component for that sections id
     const renderSections = sections.map((section) => (
-        <ul key={section.id}>
+        <li key={section.id}>
             <NavLink to={`/sections/${section.id}`}>{section.title}</NavLink>
-        </ul>
+        </li>
       ));
 
   return (
