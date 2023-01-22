@@ -25,5 +25,9 @@ export default function Goals({ sections }) {
     />
   ));
 
-  return <div>{renderGoals}</div>;
+  return( 
+  <div>
+    {renderGoals}
+  </div>
+  )
 }
