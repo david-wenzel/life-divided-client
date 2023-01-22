@@ -32,8 +32,14 @@ function App() {
       return section;
     });
     setSections(updateSections);
-    // console.log(updateCities);
   }
+
+
+  //add section 
+  function handleAddSection(newSection) {
+    setSections([...sections, {...newSection, goals:[]}]);
+  }
+  console.log(sections)
 
   return (
     <div className="App">
