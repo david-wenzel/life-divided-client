@@ -41,8 +41,8 @@ console.log(goal)
   return (
     <div>
         { isEdit?
-      <>{renderGoal}</>:
-      <>{renderEditGoal}</>
+      <>{renderEditGoal}</>:
+      <>{renderGoal}</>
         }
     </div>
   )
