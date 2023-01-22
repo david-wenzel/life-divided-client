@@ -12,9 +12,13 @@ export default function Goals({ sections }) {
   const foundSection = sections.find(({ id }) => id === parseInt(params.id));
 
   // each goal object which contains id, goal, section_id
-  let goals = foundSection.goals.map((goal) => goal);
+  // let goals = foundSection.goals.map((goal) => goal);
+  let goals
+  if(foundSection) {
+    goals = foundSection.goals.map((goal) => goal);
+ }
 
-  console.log(goals);
+  // console.log(goals);
 
 // breaks on refresh because we lose state - may need to add if statment to do a network call to fetch data 
  let renderGoals = goals.map((goal) => (

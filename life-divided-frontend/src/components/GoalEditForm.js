@@ -3,23 +3,25 @@ import { useState } from 'react'
 
 export default function GoalEditForm({goal, onEditClick, onEditGoal}) {
 
-const [values, setValues] = useState();
-
-const goalId = goal.div
-
-
-const initialValues = {
-    goal: goal.goal
-}
-
-const handleChange = (e) => {
-    const {name, value} = e.target
-
-    setValues({
-        ...values,
-        [name]: value,
-    })
-}
+    
+    console.log(goal)
+    const goalId = goal.id
+    
+    
+    const initialValues = {
+        goal: goal.goal
+    }
+    
+    const [values, setValues] = useState(initialValues);
+    const handleChange = (e) => {
+        const {name, value} = e.target
+        
+        setValues({
+            ...values,
+            [name]: value,
+        })
+    }
+    
 
 function handleSubmit(e, goal) {
     e.preventDefault();
@@ -53,7 +55,18 @@ function handleSubmit(e, goal) {
 
   return (
     <div>
-        
+        <div>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="goal"
+          placeholder={goal.goal}
+          value={values.goal}
+          onChange={handleChange}
+        />
+        <input type="submit" value="Submit Changes" />
+      </form>
+    </div>
     </div>
   )
 }
