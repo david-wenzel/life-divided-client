@@ -5,7 +5,7 @@ import GoalForm from "./GoalForm";
 
 export default function Goals({ sections, handleEditGoal, handleAddGoal }) {
   // useParams
-  const { id } = useParams();
+  // const { id } = useParams();
   const params = useParams();
   // browswer bar returns a number that is a string so we to to parseInt to get it back to a integer to compare to our sections object
   const parsedId = parseInt(params.id)
