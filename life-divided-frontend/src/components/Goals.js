@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import GoalsCard from "./GoalsCard";
 import GoalForm from "./GoalForm";
+import NavBar from "./NavBar";
 
 export default function Goals({ sections, handleEditGoal, handleAddGoal, handleDeleteGoal }) {
   // useParams
@@ -55,6 +56,7 @@ export default function Goals({ sections, handleEditGoal, handleAddGoal, handleD
 
   return( 
   <div>
+    <NavBar />
     <GoalForm id={parsedId} handleAddGoal={handleAddGoal} />
     {renderGoals}
   </div>

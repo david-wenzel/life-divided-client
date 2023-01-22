@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"
+// import { useParams } from "react-router-dom";
 import Home from "./components/Home";
 import Sections from "./components/Sections";
 import Goals from "./components/Goals";
@@ -80,7 +81,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <NavBar />
+        {/* <NavBar /> */}
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/sections">
