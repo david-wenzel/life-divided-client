@@ -45,20 +45,21 @@ export default function SectionsForm({handleAddSection}) {
 
   return (
     <div id='sectionForm'>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} autocomplete="off">
           <label>
-            <span style={{ fontWeight: "bold" }}>Add New section:</span>
+            {/* <span style={{ fontWeight: "bold" }}>Add New section:</span> */}
             <br/>
             <input
+            class="form-input"
               type="text"
               name="title"
-              placeholder="Section"
+              placeholder="Create New Area"
               value={values.title}
               onChange={handleInputChange}
             />
           </label>
-          <br/>
-          <input type="submit" value="Submit" />
+          
+          <input id='formBtn' type="submit" value="+" />
         </form>
     </div>
   )

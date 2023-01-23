@@ -57,7 +57,7 @@ export default function Goals({ sections, handleEditGoal, handleAddGoal, handleD
   return( 
   <div>
     <NavBar />
-    {foundSection.title}
+   <h1 className="title">{foundSection.title}</h1> 
     <br/>
     <GoalForm id={parsedId} handleAddGoal={handleAddGoal} />
     {renderGoals}

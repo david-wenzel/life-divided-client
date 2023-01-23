@@ -8,7 +8,7 @@ export default function Sections({sections, handleAddSection}) {
 
     const renderSections = sections.map((section) => (
         <li key={section.id}>
-            <NavLink to={`/sections/${section.id}`}>{section.title}</NavLink>
+            <NavLink to={`/sections/${section.id}` }><h1 id="section">{section.title}</h1></NavLink>
         </li>
       ));
 
@@ -17,7 +17,7 @@ export default function Sections({sections, handleAddSection}) {
   return (
     <div>
     <NavBar />
-      <h1>Sections</h1>
+      <h1 className="title">Areas of Life</h1>
       <SectionsForm handleAddSection={handleAddSection}/>
       { renderSections }
     </div>

@@ -57,7 +57,7 @@ function handleSubmit(e, goal) {
     <div>
         <div>
       <form onSubmit={handleSubmit}>
-        <input
+        <input 
           type="text"
           name="goal"
           placeholder={goal.goal}

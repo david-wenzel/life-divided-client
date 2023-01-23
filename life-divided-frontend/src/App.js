@@ -4,7 +4,6 @@ import { useEffect, useState } from "react"
 import Home from "./components/Home";
 import Sections from "./components/Sections";
 import Goals from "./components/GoalsDetail";
-import NavBar from "./components/NavBar";
 import "./App.css"
 
 function App() {
