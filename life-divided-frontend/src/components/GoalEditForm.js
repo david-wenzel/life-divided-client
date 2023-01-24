@@ -4,7 +4,6 @@ import { useState } from 'react'
 export default function GoalEditForm({goal, onEditClick, handleEditGoal}) {
 
     
-    console.log(goal)
     const goalId = goal.id
     
     
@@ -33,7 +32,6 @@ function handleSubmit(e) {
         body: JSON.stringify(values),
       })
         .then((r) => r.json())
-        // .then((data) => console.log(data))
         .then((editedGoal) => handleEditGoal(editedGoal));
   
       // set isEdit state to !isEdit so the form is no longer displayed
