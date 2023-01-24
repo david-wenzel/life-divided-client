@@ -4,7 +4,7 @@ import GoalsCard from "./GoalsCard";
 import GoalForm from "./GoalForm";
 import NavBar from "./NavBar";
 
-export default function Goals({ sections, handleEditGoal, handleAddGoal, handleDeleteGoal }) {
+export default function GoalsDetail({ sections, handleEditGoal, handleAddGoal, handleDeleteGoal }) {
   // useParams
   // const { id } = useParams();
   const params = useParams();

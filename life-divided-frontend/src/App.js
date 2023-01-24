@@ -3,8 +3,9 @@ import { useEffect, useState } from "react"
 // import { useParams } from "react-router-dom";
 import Home from "./components/Home";
 import Sections from "./components/Sections";
-import Goals from "./components/GoalsDetail";
+// import GoalsDetail from "./components/GoalsDetail";
 import "./App.css"
+import GoalsDetail from "./components/GoalsDetail";
 
 function App() {
   // state
@@ -36,26 +37,26 @@ function App() {
     setSections(updateSections);
   }
 
-  function handleAddGoal(newGoal) {
+  function handleAddGoal(newGoals) {
 
     // map over sections. if the section id matches the new goals's foreign key for section id, it will copy the goal and nested events, and add in the new goal. Otherwise, it will return the existing section.
-    const updateSections = sections.map((section) => {
-      if (section.id === newGoal.section_id) {
-        return {
-          ...section,
-          goals: [...section.goals, newGoal],
-        };
-      }
-      return section;
-    });
+    // const updateSections = sections.map((section) => {
+    //   if (section.id === newGoal.section_id) {
+    //     return {
+    //       ...section,
+    //       goals: [...section.goals, newGoal],
+    //     };
+    //   }
+    //   return section;
+    // });
     // console.log(updateCities);
-    setSections(updateSections);
+    setSections(newGoals);
   }
 
 
   //add section 
-  function handleAddSection(newSection) {
-    setSections([...sections, {...newSection, goals:[]}]);
+  function handleAddSection(newSections) {
+    setSections(newSections);
   }
 
   function handleDeleteGoal(deletedGoal) {
@@ -87,7 +88,7 @@ function App() {
            <Sections sections={ sections } handleAddSection={handleAddSection}/>
           </Route>
           <Route exact path="/sections/:id" >
-           <Goals sections={ sections }
+           <GoalsDetail sections={ sections }
            handleDeleteGoal={handleDeleteGoal}
            handleEditGoal={handleEditGoal}
            handleAddGoal={handleAddGoal}

@@ -24,7 +24,7 @@ export default function SectionsForm({handleAddSection}) {
         // console.log("submitted");
         // console.log(values);
     
-        fetch("http://localhost:9292/sections", {
+        fetch("http://localhost:9292/sections/new", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -33,7 +33,7 @@ export default function SectionsForm({handleAddSection}) {
         })
           .then((r) => r.json())
           // .then((data) => console.log(data));
-          .then((newSection) => handleAddSection(newSection));
+          .then((newSections) => handleAddSection(newSections));
         // clear input fields on submit by updating values state:
         setValues(initialValues);
       }
@@ -53,7 +53,7 @@ export default function SectionsForm({handleAddSection}) {
             class="form-input"
               type="text"
               name="title"
-              placeholder="..."
+              placeholder=""
               value={values.title}
               onChange={handleInputChange}
             />

@@ -34,7 +34,7 @@ export default function GoalForm({id, handleAddGoal}) {
     })
       .then((r) => r.json())
       // .then((data) => console.log(data))
-      .then((newGoal) => handleAddGoal(newGoal));
+      .then((newGoals) => handleAddGoal(newGoals));
 
     // clear input fields on submit by updating values state:
     setValues(initialValues);
