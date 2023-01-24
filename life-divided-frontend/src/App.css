@@ -72,20 +72,10 @@ left: 50%;
 transform: translate(-50%, -50%);
 }
 
-/* #fade {
-  animation: fade 2s ease-in-out;
-  animation-iteration-count: infinite;
-  opacity: 0;
-}
 
-@keyframes fade {
-  0% { opacity: 0; }
-  50% { opacity: 1; }
-  100% { opacity: 0; }
-} */
 
 #blur {
-  animation: blur 4s ease-in-out;
+  animation: blur 2.5s ease-in-out;
   animation-iteration-count: infinite;
   filter: blur(0px);
   font-size: 2em;
@@ -93,9 +83,10 @@ transform: translate(-50%, -50%);
 
 @keyframes blur {
   0% { filter: blur(0px); }
-  50% { filter: blur(50px); }
+  50% { filter: blur(5px); }
   100% { filter: blur(0px); }
 }
+
 
 #life{
   font-size: 5em;
@@ -115,6 +106,8 @@ transform: translate(-50%, -50%);
 #enterButton:hover {
   border-color: #7e6e6e; /* red border color on hover */
   background-color: #e6e6e6; /* light gray background color on hover */
+  padding: 8px 18px; /* Add some padding to the button */
+  
 }
 
 #about{
@@ -170,4 +163,9 @@ transform: translate(-50%, -50%);
 }
 #editBtn:hover{
   font-size: 18px;
+}
+
+h3{
+  margin-bottom: -3px;
+  font-size: 30px;
 }

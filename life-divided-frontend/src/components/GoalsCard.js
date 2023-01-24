@@ -14,7 +14,7 @@ export default function GoalsCard({goal, handleEditGoal, handleDeleteClick}) {
 
     const renderGoal = (
         <div key={goal.id}>
-          <span style={{ fontWeight: "bold" }}>{goal.goal}</span> 
+          <h3 style={{ fontWeight: "bold" }}>{goal.goal}</h3> 
           <button id='deleteBtn' onClick={(e) => handleDeleteClick(e, goal)}>X</button> 
           <br/>
           <button id='editBtn' onClick={(e) => handleEditClick(e, goal)}>Edit</button> 
