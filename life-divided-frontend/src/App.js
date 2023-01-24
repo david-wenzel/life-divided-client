@@ -19,23 +19,7 @@ function App() {
   }, []);
 
   function handleEditGoal(editedGoal) {
-    // map over all section. if the section id matches edited goals's foreign key for section id, it'll replace existing goal as long as the goal id matches the id of the goal being edited.
-    // const updateSections = sections.map((section) => {
-    //   if (section.id === editGoal.section_id) {
-    //     return {
-    //       ...section,
-    //       goals: section.goals.map((goal) => {
-    //         if (goal.id === editGoal.id) {
-    //           return editGoal;
-    //         }
-    //         return goal;
-    //       }),
-    //     };
-    //   }
-    //   return section;
-    // });
     setSections(editedGoal);
-    console.log(sections)
   }
 
   //add Goals
@@ -50,20 +34,7 @@ function App() {
   }
 
   function handleDeleteGoal(deletedGoal) {
-    // console.log("handle delete Event", deletedEvent);
-    // newCitites filters cities array down to all cities whose id doesn't match the deleted id.
-    const newSections = sections.map((section) => {
-      // map over cities. if the city id matches the deleted event's foreign key for city id, it will copy the city and filter down the city's events those whose id don't match the deleted event's id.
-      if (section.id === deletedGoal.section_id) {
-        return {
-          ...section,
-          goals: section.goals.filter((goal) => goal.id !== deletedGoal.id),
-        };
-      }
-      return section;
-    });
-    // console.log(newCities);
-    setSections(newSections);
+    setSections(deletedGoal);
   }
 
 
