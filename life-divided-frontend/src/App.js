@@ -18,38 +18,28 @@ function App() {
       .then((data) => setSections(data));
   }, []);
 
-  function handleEditGoal(editGoal) {
+  function handleEditGoal(editedGoal) {
     // map over all section. if the section id matches edited goals's foreign key for section id, it'll replace existing goal as long as the goal id matches the id of the goal being edited.
-    const updateSections = sections.map((section) => {
-      if (section.id === editGoal.section_id) {
-        return {
-          ...section,
-          goals: section.goals.map((goal) => {
-            if (goal.id === editGoal.id) {
-              return editGoal;
-            }
-            return goal;
-          }),
-        };
-      }
-      return section;
-    });
-    setSections(updateSections);
-  }
-
-  function handleAddGoal(newGoals) {
-
-    // map over sections. if the section id matches the new goals's foreign key for section id, it will copy the goal and nested events, and add in the new goal. Otherwise, it will return the existing section.
     // const updateSections = sections.map((section) => {
-    //   if (section.id === newGoal.section_id) {
+    //   if (section.id === editGoal.section_id) {
     //     return {
     //       ...section,
-    //       goals: [...section.goals, newGoal],
+    //       goals: section.goals.map((goal) => {
+    //         if (goal.id === editGoal.id) {
+    //           return editGoal;
+    //         }
+    //         return goal;
+    //       }),
     //     };
     //   }
     //   return section;
     // });
-    // console.log(updateCities);
+    setSections(editedGoal);
+    console.log(sections)
+  }
+
+  //add Goals
+  function handleAddGoal(newGoals) {
     setSections(newGoals);
   }
 

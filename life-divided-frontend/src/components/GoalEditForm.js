@@ -23,9 +23,8 @@ export default function GoalEditForm({goal, onEditClick, handleEditGoal}) {
     }
     
 
-function handleSubmit(e, goal) {
+function handleSubmit(e) {
     e.preventDefault();
-
     fetch(`http://localhost:9292/goals/${goalId}`, {
         method: "PATCH",
         headers: {
@@ -35,7 +34,7 @@ function handleSubmit(e, goal) {
       })
         .then((r) => r.json())
         // .then((data) => console.log(data))
-        .then((editGoal) => handleEditGoal(editGoal));
+        .then((editedGoal) => handleEditGoal(editedGoal));
   
       // set isEdit state to !isEdit so the form is no longer displayed
       onEditClick();
