@@ -1,9 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useEffect, useState } from "react"
-// import { useParams } from "react-router-dom";
 import Home from "./components/Home";
 import Sections from "./components/Sections";
-// import GoalsDetail from "./components/GoalsDetail";
 import "./App.css"
 import GoalsDetail from "./components/GoalsDetail";
 
