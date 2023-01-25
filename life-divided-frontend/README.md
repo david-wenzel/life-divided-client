@@ -1,5 +1,8 @@
 #LIFE/divided
-Life/divided is a goal management app that helps you organize your goals and divide them into sections to make them more manageable.
+###Life/divided is a goal management app that helps you organize your goals and divide them into sections to make them more manageable.
+
+
+
 ![Logo](https://64.media.tumblr.com/b5ab4893d2a8bcb6f2f4e30c8e86b7a6/a298cde9b023e8ae-e5/s500x750/2891c04c3340b0a06114dc20a0792840fb079be0.png)
 
 
